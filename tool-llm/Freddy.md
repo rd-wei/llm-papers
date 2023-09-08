@@ -18,14 +18,14 @@
   - 对于API响应内容过长的，使用ChatGPT舍弃不重要的部分
 - 选取多个API($S_i$)，使用ChatGPT根据API生成问题($I_i$)，问题可能需求一个或多个API解答
 - 根据问题使用ChatGPT生成解决路径
-  - 提供的API集合为之前选取的集合$S_i$
+  - 提供的API集合为之前选取的集合 $S_i$
   - 使用DFSDT（深度优先决策树）辅助ChatGPT
 
 ### 模型训练和评测 - ToolLLaMA
 
 在ToolBench上微调了LLaMA模型，得到ToolLLaMA
 
-测试时，提供的可选API是之前选取的API集合$S_i$
+测试时，提供的可选API是之前选取的API集合 $S_i$
 
 ## 实验发现：
 
