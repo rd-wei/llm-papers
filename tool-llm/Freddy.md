@@ -10,9 +10,11 @@
 
 ## 实验：
 
-### 数据库建设 - [ToolBench](https://drive.google.com/drive/folders/1yBUQ732mPu-KclJnuQELEhtKakdXFc3J)
+### 数据集建设 - [ToolBench](https://github.com/OpenBMB/ToolBench)
 
-数据库包含API，问题，和解决路径
+[数据集文件在Google Drive](https://drive.google.com/drive/folders/1yBUQ732mPu-KclJnuQELEhtKakdXFc3J)
+
+数据集包含API，问题，和解决路径
 
 - 从[Rapid API Hub](https://rapidapi.com/hub)选取了质量较高的3,451工具（16,464 API)
   - 对于API响应内容过长的，使用ChatGPT舍弃不重要的部分
@@ -45,7 +47,7 @@ ToolLLaMA模型结合DFSDT可以（200步以内）解决68%的单工具问题，
 
 对于多工具问题，根据工具跨越的领域范围不同，ToolLLaMA+DFSDT分别能够解决47%和40%，而ChatGPT+DFSDT可以解决51%和57%。
 
-但是怎么没见过的工具解决率更高呢？？
+[但是怎么没见过的工具解决率更高呢？？](https://github.com/OpenBMB/ToolBench/issues/131)
 
 # 评论
 
