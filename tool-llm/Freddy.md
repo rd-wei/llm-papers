@@ -10,13 +10,18 @@
 
 ## 实验：
 
-### 数据库建设 - ToolBench
+### 数据库建设 - [ToolBench](https://drive.google.com/drive/folders/1yBUQ732mPu-KclJnuQELEhtKakdXFc3J)
 
 数据库包含API，问题，和解决路径
 
 - 从[Rapid API Hub](https://rapidapi.com/hub)选取了质量较高的3,451工具（16,464 API)
   - 对于API响应内容过长的，使用ChatGPT舍弃不重要的部分
-- 选取多个API($S_i$)，使用ChatGPT根据API生成问题($I_i$)，问题可能需求一个或多个API解答
+  - 包含49个粗分类种类
+  - 包含细分集
+- 根据以下选取策略选取多个API($S_i$)，使用ChatGPT根据API生成问题($I_i$)，问题可能需求一个或多个API解答
+  - $I_1$ 对于一个工具选取它的全部API
+  - $I_2$ 选取同一个种类的2-5个工具，每个工具最多3个API
+  - $I_3$ 选取同一个集的2-5个工具，每个工具最多3个API
 - 根据问题使用ChatGPT生成解决路径
   - 提供的API集合为之前选取的集合 $S_i$
   - 使用DFSDT（深度优先决策树）辅助ChatGPT
@@ -25,13 +30,22 @@
 
 在ToolBench上微调了LLaMA模型，得到ToolLLaMA
 
-测试时，提供的可选API是之前选取的API集合 $S_i$
+测试时，提供的可选API是之前同样策略选取的API集合 $S_k$
 
 ## 实验发现：
+
+![image](https://github.com/rd-wei/llm-papers/assets/64512950/4d61ea90-f837-43c8-a93d-bb310e32af29)
+
+表格中的后缀表示API的选取范围不同
+  - Inst表示测试API是训练API
+  - Tool表示测试API和训练API相同种类
+  - Cat表示测试API和训练API不同种类
 
 ToolLLaMA模型结合DFSDT可以（200步以内）解决68%的单工具问题，超过了LLaMA模型的其他针对指令遵循微调的变种。老师模型ChatGPT则可以解决78%的单工具问题
 
 对于多工具问题，根据工具跨越的领域范围不同，ToolLLaMA+DFSDT分别能够解决47%和40%，而ChatGPT+DFSDT可以解决51%和57%。
+
+但是怎么没见过的工具解决率更高呢？？
 
 # 评论
 
