@@ -18,3 +18,13 @@ https://arxiv.org/abs/2307.16789
 https://arxiv.org/abs/2306.03460
 ### Link to comments
 [Program Synthesis](program-synthesis)
+
+## Cognitive Architectures for Language Agents
+
+### Link
+
+https://arxiv.org/abs/2309.02427
+
+### Link to comments
+
+[Cognitive Architectures](cognitive-architectures)
