@@ -77,6 +77,38 @@ pass：生成的程序，经过归一化，包含了一段子程序和标准答�
 
 语法纠错如果删去会降低 5% pass rate。
 
+![image](https://github.com/rd-wei/llm-papers/assets/64512950/fb6ae9a7-158a-41ac-a713-ab06c43a0e1d)
+
+### 实验数据：
+
+#### 实验条件：
+
+Entity Classifier: 实体分类
+
+Requires Context Classifier：上下文分类
+
+Code Correction：程序纠错
+
+k：prompt中提供的程序示例数量
+
+#### 实验测量的数据：
+
+标准答案：因为一个用户要求可以有多种程序满足，预先定好一些程序作为候选答案；程序只要匹配任意一个候选答案，就认为它匹配了标准答案。
+
+Exact：输出的程序直接和标准答案一样
+
+Normalized：输出的程序正则化后和标准答案一样
+
+Subprogram Exact：输出的程序有一段子程序和完整的标准答案一样
+
+Subprogram Normalized：输出的程序有一段子程序正则化后和完整的标准答案一样
+
+Manual Check Valid：在上面都不满足的情况下，人工判断认为答案正确
+
+None：不满足以上条件
+
+Error：输出的不是OSDL程序
+
 # 评论
 
 本文主要讲了ODSL的设计思路，以及prompt engineering的过程。设计一个对大模型友好的语言，相比于直接让大模型学习Office API，可以给我们更多的控制。比如说，我们可以从语言上保证操作可撤销，从理论上避免了错误的发生。同时，也提高了模型能够正确操作的可能性，和我们对模型打字错误的纠正能力。
