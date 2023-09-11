@@ -107,7 +107,7 @@ Manual Check Valid：在上面都不满足的情况下，人工判断认为答�
 
 None：不满足以上条件
 
-Error：输出的不是OSDL程序
+Error：输出的不是ODSL程序
 
 # 评论
 
